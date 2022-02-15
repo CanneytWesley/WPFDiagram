@@ -47,7 +47,7 @@ namespace WPFDiagram
             var P7 = new DiagramItem()
             {
                 ArrowDirection = ArrowDirection.LeftAndRight,
-                Header = new Block("2416-T1006")
+                Header = new Block("T1")
             };
             var P8 = new DiagramItem()
             {
@@ -91,8 +91,8 @@ namespace WPFDiagram
             {
                 ArrowDirection = ArrowDirection.LeftAndRight,
                 Header = new Block("P4"),
-                Middle = new Block("H4 > H5 > H7"),
-                Footer = new Block("H4") ,
+                Middle = new Block("Middle"),
+                Footer = new Block("Footer") ,
             };
 
             P4.Footer.SetBackgroundBrush("#e312c4");
