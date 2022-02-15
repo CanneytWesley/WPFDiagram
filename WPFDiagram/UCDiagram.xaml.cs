@@ -116,6 +116,5 @@ namespace WPFDiagram
             
             maker.Create(CvDrawingBoard, list);
         }
-
     }
 }
