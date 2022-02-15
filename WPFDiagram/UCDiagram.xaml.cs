@@ -1,5 +1,4 @@
-﻿using LIBDiagram;
-using LIBDiagram.Model;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +13,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Block = LIBDiagram.Model.Block;
+using WPFDiagram.Core;
+using WPFDiagram.Core.Model;
+using Block = WPFDiagram.Core.Model.Block;
 
 namespace WPFDiagram
 {

@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LIBDiagram\LIBDiagram.csproj" />
+    <ProjectReference Include="..\LIBDiagram\WPFDiagram.Core.csproj" />
   </ItemGroup>
 
 </Project>

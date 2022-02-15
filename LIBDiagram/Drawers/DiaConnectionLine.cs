@@ -1,10 +1,10 @@
-﻿using LIBDiagram.Model;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows.Media;
 using System.Windows;
 using System.Windows.Shapes;
+using WPFDiagram.Core.Model;
 
-namespace LIBDiagram.Drawers
+namespace WPFDiagram.Core.Drawers
 {
     internal class DiaConnectionLine
     {

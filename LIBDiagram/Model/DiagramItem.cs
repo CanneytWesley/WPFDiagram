@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LIBDiagram.Model
+namespace WPFDiagram.Core.Model
 {
 
     public class DiagramItem

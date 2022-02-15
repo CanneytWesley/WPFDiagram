@@ -1,4 +1,4 @@
-﻿namespace LIBDiagram.Model
+﻿namespace WPFDiagram.Core.Model
 {
     public enum ArrowDirection
     { 

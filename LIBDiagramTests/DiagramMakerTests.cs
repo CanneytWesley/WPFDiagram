@@ -1,13 +1,13 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using LIBDiagram;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using LIBDiagram.Model;
+using WPFDiagram.Core.Model;
+using WPFDiagram.Core;
 
-namespace LIBDiagram.Tests
+namespace WPFDiagram.CoreTests
 {
     [TestClass()]
     public class DiagramMakerTests

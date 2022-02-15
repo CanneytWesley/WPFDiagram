@@ -1,6 +1,6 @@
 ﻿using System.Windows.Media;
 
-namespace LIBDiagram.Model
+namespace WPFDiagram.Core.Model
 {
     public class Block
     {

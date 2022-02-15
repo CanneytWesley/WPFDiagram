@@ -1,6 +1,4 @@
-﻿using LIBDiagram.Drawers;
-using LIBDiagram.Model;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -9,9 +7,11 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using WPFDiagram.Core.Drawers;
+using WPFDiagram.Core.Model;
 
-[assembly: InternalsVisibleTo("LIBDiagramTests")]
-namespace LIBDiagram
+[assembly: InternalsVisibleTo("WPFDiagram.CoreTests")]
+namespace WPFDiagram.Core
 {
     public class DiagramMaker
     {
