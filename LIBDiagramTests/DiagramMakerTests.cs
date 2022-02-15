@@ -17,15 +17,15 @@ namespace LIBDiagram.Tests
         {
             var P7 = new DiagramItem()
             {
-                Header = "P7"
+                Header = new Block("P7")
             };
             var P8 = new DiagramItem()
             {
-                Header = "P8"
+                Header = new Block( "P8")
             };
             var P5 = new DiagramItem()
             {
-                Header = "P5",
+                Header = new Block("P5"),
                 Items = new List<DiagramItem>()
                 {
                     P7,
@@ -34,11 +34,11 @@ namespace LIBDiagram.Tests
             };
             var P6 = new DiagramItem()
             {
-                Header = "P6",
+                Header = new Block("P6"),
             };
             var P2 = new DiagramItem()
             {
-                Header = "P2",
+                Header = new Block("P2"),
                 Items = new List<DiagramItem>(){
                                 P5,
                                 P6
@@ -47,16 +47,16 @@ namespace LIBDiagram.Tests
 
             var P3 = new DiagramItem()
             {
-                Header = "P3",
+                Header = new Block("P3"),
             };
             var P4 = new DiagramItem()
             {
-                Header = "P4",
+                Header = new Block("P4"),
             };
 
             var P1 = new DiagramItem()
             {
-                Header = "P1",
+                Header = new Block("P1"),
                 Items = new List<DiagramItem>(){
                         P2,
                         P3,
@@ -127,32 +127,32 @@ namespace LIBDiagram.Tests
             List<DiagramItem> list = new List<DiagramItem>()
             {
                 new DiagramItem(){
-                    Header = "P1",
+                    Header = new Block("P1"),
                     Items = new List<DiagramItem>(){
                         new DiagramItem(){
-                            Header = "P2",
+                            Header = new Block("P2"),
                             Items = new List<DiagramItem>(){
                                 new DiagramItem(){
-                                 Header = "P5"
+                                 Header = new Block("P5")
                                 }
                             }
                         },
                         new DiagramItem(){
-                            Header = "P3",
+                            Header = new Block("P3"),
                             Items = new List<DiagramItem>(){
                                 new DiagramItem(){
-                                 Header = "P6"
+                                 Header = new Block("P6")
                                 },
                                 new DiagramItem(){
-                                 Header = "P7"
+                                 Header = new Block("P7")
                                 },
                             }
                         },
                         new DiagramItem(){
-                            Header = "P4",
+                            Header = new Block("P4"),
                             Items = new List<DiagramItem>(){
                                 new DiagramItem(){
-                                 Header = "P8"
+                                 Header = new Block("P8")
                                 }
                             }
                         },
@@ -179,39 +179,39 @@ namespace LIBDiagram.Tests
             List<DiagramItem> list = new List<DiagramItem>()
             {
                 new DiagramItem(){
-                    Header = "P1",
+                    Header = new Block("P1"),
                     ArrowDirection = ArrowDirection.LeftAndRight,
                     Items = new List<DiagramItem>(){
                         new DiagramItem(){
-                            Header = "P2",
+                            Header = new Block("P2"),
                             ArrowDirection = ArrowDirection.LeftAndRight,
                             Items = new List<DiagramItem>(){
                                 new DiagramItem(){
-                                    Header = "P5",
+                                    Header = new Block("P5"),
                                     ArrowDirection = ArrowDirection.LeftAndRight,
                                 }
                             }
                         },
                         new DiagramItem(){
-                            Header = "P3",
+                            Header = new Block("P3"),
                             ArrowDirection = ArrowDirection.LeftAndRight,
                             Items = new List<DiagramItem>(){
                                 new DiagramItem(){
-                                 Header = "P6",
+                                 Header = new Block("P6"),
                                 ArrowDirection = ArrowDirection.LeftAndRight,
                                 },
                                 new DiagramItem(){
-                                 Header = "P7",
+                                 Header = new Block("P7"),
                                 ArrowDirection = ArrowDirection.LeftAndRight,
                                 },
                             }
                         },
                         new DiagramItem(){
-                            Header = "P4",
+                            Header = new Block("P4"),
                             ArrowDirection = ArrowDirection.LeftAndRight,
                             Items = new List<DiagramItem>(){
                                 new DiagramItem(){
-                                 Header = "P8",
+                                 Header = new Block("P8"),
                                  ArrowDirection = ArrowDirection.LeftAndRight,
                                 }
                             }
@@ -239,29 +239,29 @@ namespace LIBDiagram.Tests
             List<DiagramItem> list = new List<DiagramItem>()
             {
                 new DiagramItem(){
-                    Header = "P1",
+                    Header = new Block("P1"),
                     Items = new List<DiagramItem>(){
                         new DiagramItem(){
-                            Header = "P2",
+                            Header = new Block("P2"),
                             Items = new List<DiagramItem>(){
                                 new DiagramItem(){
-                                 Header = "P5"
+                                 Header = new Block("P5")
                                 }
                             }
                         },
                         new DiagramItem(){
-                            Header = "P3",
+                            Header = new Block("P3"),
                             Items = new List<DiagramItem>(){
                                 new DiagramItem(){
-                                 Header = "P6"
+                                 Header = new Block("P6")
                                 },
                                 new DiagramItem(){
-                                 Header = "P7"
+                                 Header = new Block("P7")
                                 },
                             }
                         },
                         new DiagramItem(){
-                            Header = "P4",
+                            Header = new Block("P4"),
                         },
                     }
                 },
