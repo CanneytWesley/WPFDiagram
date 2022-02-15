@@ -4,13 +4,27 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
-    <Authors />
+    <Authors>PCW-Solutions</Authors>
     <Company />
     <Product />
+    <PackageId>PCW.WPFDiagram</PackageId>
+    <Description>A diagram for WPF Applications.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/CanneytWesley/WPFDiagram</RepositoryUrl>
+    <PackageTags>Diagram, WPF</PackageTags>
+    <PackageIcon>diagram.ico</PackageIcon>
+    <PackageIconUrl />
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\LIBDiagram\LIBDiagram.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="F:\Dropbox\OneDrive - BUYCK.BE\Desktop\diagram.ico">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
