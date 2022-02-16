@@ -12,7 +12,10 @@
     <PackageIconUrl />
     <RepositoryUrl>https://github.com/CanneytWesley/WPFDiagram</RepositoryUrl>
     <PackageTags>Diagram, WPF</PackageTags>
+    <Version>1.0.7</Version>
   </PropertyGroup>
+  
+  
 
   <ItemGroup>
     <None Include="F:\Dropbox\OneDrive - BUYCK.BE\Desktop\diagram.png">

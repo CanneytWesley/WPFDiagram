@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,13 +25,42 @@ namespace WPFDiagram
     /// </summary>
     public partial class UCDiagram : UserControl
     {
-        public UCDiagram()
+
+
+        public ObservableCollection<DiagramItem> DiagramItems
         {
-            InitializeComponent();
+            get { return (ObservableCollection<DiagramItem>)GetValue(ItemsProperty); }
+            set { SetValue(ItemsProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Items.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ItemsProperty =
+            DependencyProperty.Register("DiagramItems", typeof(ObservableCollection<DiagramItem>), typeof(UCDiagram), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.None, OnItemChange));
 
 
-                DiagramMaker maker = new DiagramMaker() {
-                    ItemWidth = 150,
+        private static void OnItemChange(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var ucdiagram = (UCDiagram)d;
+
+            if (ucdiagram.DiagramItems != null)
+            {
+                ucdiagram.DiagramItems.CollectionChanged -= ucdiagram.DiagramItems_CollectionChanged;
+                ucdiagram.DiagramItems.CollectionChanged += ucdiagram.DiagramItems_CollectionChanged;
+            }
+
+            ucdiagram.MakeDiagram();
+        }
+
+        private void DiagramItems_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            MakeDiagram();
+        }
+
+        private void MakeDiagram()
+        {
+            DiagramMaker maker = new DiagramMaker()
+            {
+                ItemWidth = 150,
                 ItemHeight = 100,
                 DistanceHorizontal = 100,
                 DistanceVertical = 20,
@@ -38,84 +68,14 @@ namespace WPFDiagram
                 ArrowHeight = 10,
             };
 
+            maker.Create(CvDrawingBoard, DiagramItems?.ToList());
 
-            var P9 = new DiagramItem()
-            {
-                ArrowDirection = ArrowDirection.LeftAndRight,
-                Header = new Block("P9"),
-                ClickAction = () => { MessageBox.Show("Wow"); }
-            };
-            var P7 = new DiagramItem()
-            {
-                ArrowDirection = ArrowDirection.LeftAndRight,
-                Header = new Block("T1")
-            };
-            var P8 = new DiagramItem()
-            {
-                ArrowDirection = ArrowDirection.Left,
-                Header = new Block("P8"),
-                Items = new List<DiagramItem>() { 
-                    P9
-                }
-            };
-            var P5 = new DiagramItem()
-            {
-                ArrowDirection = ArrowDirection.LeftAndRight,
-                Header = new Block("P5"),
-                Items = new List<DiagramItem>()
-                {
-                    P7,
-                    P8
-                }
-            };
-            var P6 = new DiagramItem()
-            {
-                ArrowDirection = ArrowDirection.LeftAndRight,
-                Header = new Block("P6"),
-            };
-            var P2 = new DiagramItem()
-            {
-                ArrowDirection = ArrowDirection.LeftAndRight,
-                Header = new Block("P2"),
-                Items = new List<DiagramItem>(){
-                                P5,
-                                P6
-                            }
-            };
+        }
 
-            var P3 = new DiagramItem()
-            {
-                ArrowDirection = ArrowDirection.LeftAndRight,
-                Header = new Block( "P3"),
-            };
-            var P4 = new DiagramItem()
-            {
-                ArrowDirection = ArrowDirection.LeftAndRight,
-                Header = new Block("P4"),
-                Middle = new Block("Middle"),
-                Footer = new Block("Footer") ,
-            };
+        public UCDiagram()
+        {
+            InitializeComponent();
 
-            P4.Footer.SetBackgroundBrush("#e312c4");
-
-            var P1 = new DiagramItem()
-            {
-                ArrowDirection = ArrowDirection.LeftAndRight,
-                Header = new Block("P1"),
-                Items = new List<DiagramItem>(){
-                        P2,
-                        P3,
-                        P4,
-                    }
-            };
-
-            List<DiagramItem> list = new List<DiagramItem>()
-            {
-                P1
-            };
-
-            
-            maker.Create(CvDrawingBoard, list);
         }
     }
 }

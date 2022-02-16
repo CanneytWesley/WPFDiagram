@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <local:UCDiagram />
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <local:UCDiagram DiagramItems="{Binding Items}" />
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center">
+            <Button Content="Voeg nieuwe lijst toe" Margin="5" Command="{Binding NewListCommand}" />
+            <Button Content="Voeg item toe" Margin="5" Command="{Binding AddItemCommand}" />
+        </StackPanel>
     </Grid>
 </Window>

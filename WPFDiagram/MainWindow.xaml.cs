@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFDiagram.Core.Model;
+using WPFDiagram.Core;
 
 namespace WPFDiagram
 {
@@ -23,6 +25,9 @@ namespace WPFDiagram
         public MainWindow()
         {
             InitializeComponent();
+
+            DataContext = new MainWindowViewModel();
+
         }
     }
 }

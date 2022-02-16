@@ -39,12 +39,18 @@ namespace WPFDiagram.Core
         }
 
         public void Create(Canvas canvas, DiagramItem item)
-        { 
+        {
+            canvas.Children.Clear();
+            if (item == null) return;
+
             Create(canvas, new List<DiagramItem>(){ item });
         }
 
         public void Create(Canvas canvas, List<DiagramItem> items)
         {
+            canvas.Children.Clear();
+            if (items == null || items.Count == 0) return;
+
             Canvas = canvas;
             Items = items;
 

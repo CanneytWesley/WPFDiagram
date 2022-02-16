@@ -12,16 +12,17 @@ namespace WPFDiagram
     {
         protected override System.Windows.Size MeasureOverride(System.Windows.Size constraint)
         {
-            base.MeasureOverride(constraint);
-            double width = base
-                .InternalChildren
-                .OfType<UIElement>()
-                .Max(i => i.DesiredSize.Width + (double)i.GetValue(Canvas.LeftProperty));
+            if (Children.Count == 0) return new Size(50, 50);
 
-            double height = base
+            base.MeasureOverride(constraint);
+
+            var elements = base
                 .InternalChildren
-                .OfType<UIElement>()
-                .Max(i => i.DesiredSize.Height + (double)i.GetValue(Canvas.TopProperty));
+                .OfType<UIElement>().ToList();
+
+            double width = elements.Max(i => i.DesiredSize.Width + (double)i.GetValue(Canvas.LeftProperty));
+
+            double height = elements.Max(i => i.DesiredSize.Height + (double)i.GetValue(Canvas.TopProperty));
 
             return new Size(width, height);
         }

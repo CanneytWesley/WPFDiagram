@@ -15,12 +15,8 @@
     <PackageIcon>diagram.png</PackageIcon>
     <PackageIconUrl />
     <AssemblyVersion>1.0.0.1</AssemblyVersion>
-    <Version>1.0.4</Version>
+    <Version>1.0.7</Version>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\LIBDiagram\WPFDiagram.Core.csproj" />
-  </ItemGroup>
 
   
   <ItemGroup>
@@ -29,5 +25,18 @@
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
+
+  
+  <ItemGroup>
+    <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <ProjectReference Include="..\LIBDiagram\WPFDiagram.Core.csproj" />
+  </ItemGroup>
+
+  
+  
 
 </Project>
