@@ -38,6 +38,84 @@ namespace WPFDiagram
             DependencyProperty.Register("DiagramItems", typeof(ObservableCollection<DiagramItem>), typeof(UCDiagram), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.None, OnItemChange));
 
 
+
+        public double ItemWidth
+        {
+            get { return (double)GetValue(ItemWidthProperty); }
+            set { SetValue(ItemWidthProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ItemWidth.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ItemWidthProperty =
+            DependencyProperty.Register("ItemWidth", typeof(double), typeof(UCDiagram), new PropertyMetadata(150d));
+
+
+
+
+        public double ItemHeight
+        {
+            get { return (double)GetValue(ItemHeightProperty); }
+            set { SetValue(ItemHeightProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ItemHeight.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ItemHeightProperty =
+            DependencyProperty.Register("ItemHeight", typeof(double), typeof(UCDiagram), new PropertyMetadata(100d));
+
+
+
+
+        public double DistanceHorizontal
+        {
+            get { return (double)GetValue(DistanceHorizontalProperty); }
+            set { SetValue(DistanceHorizontalProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for DistanceHorizontal.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty DistanceHorizontalProperty =
+            DependencyProperty.Register("DistanceHorizontal", typeof(double), typeof(UCDiagram), new PropertyMetadata(100d));
+
+
+
+
+        public double DistanceVertical
+        {
+            get { return (double)GetValue(DistanceVerticalProperty); }
+            set { SetValue(DistanceVerticalProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for DistanceVertical.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty DistanceVerticalProperty =
+            DependencyProperty.Register("DistanceVertical", typeof(double), typeof(UCDiagram), new PropertyMetadata(20d));
+
+
+
+
+        public double ArrowWidth
+        {
+            get { return (double)GetValue(ArrowWidthProperty); }
+            set { SetValue(ArrowWidthProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ArrowWidth.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ArrowWidthProperty =
+            DependencyProperty.Register("ArrowWidth", typeof(double), typeof(UCDiagram), new PropertyMetadata(10d));
+
+
+
+
+        public double ArrowHeight
+        {
+            get { return (double)GetValue(ArrowHeightProperty); }
+            set { SetValue(ArrowHeightProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ArrowHeight.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ArrowHeightProperty =
+            DependencyProperty.Register("ArrowHeight", typeof(double), typeof(UCDiagram), new PropertyMetadata(10d));
+
+
+
         private static void OnItemChange(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var ucdiagram = (UCDiagram)d;
@@ -60,12 +138,12 @@ namespace WPFDiagram
         {
             DiagramMaker maker = new DiagramMaker()
             {
-                ItemWidth = 150,
-                ItemHeight = 100,
-                DistanceHorizontal = 100,
-                DistanceVertical = 20,
-                ArrowWidth = 10,
-                ArrowHeight = 10,
+                ItemWidth = ItemWidth,
+                ItemHeight = ItemHeight,
+                DistanceHorizontal = DistanceHorizontal,
+                DistanceVertical = DistanceVertical,
+                ArrowWidth = ArrowWidth,
+                ArrowHeight = ArrowHeight,
             };
 
             maker.Create(CvDrawingBoard, DiagramItems?.ToList());
