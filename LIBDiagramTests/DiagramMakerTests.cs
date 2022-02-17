@@ -17,15 +17,21 @@ namespace WPFDiagram.CoreTests
         {
             var P7 = new DiagramItem()
             {
-                Header = new Block("P7")
+                Header = new Block("P7"),
+                Height = 300,
+                Width = 150,
             };
             var P8 = new DiagramItem()
             {
-                Header = new Block( "P8")
+                Header = new Block( "P8"),
+                Height = 300,
+                Width = 150,
             };
             var P5 = new DiagramItem()
             {
                 Header = new Block("P5"),
+                Height = 300,
+                Width = 150,
                 Items = new List<DiagramItem>()
                 {
                     P7,
@@ -35,10 +41,14 @@ namespace WPFDiagram.CoreTests
             var P6 = new DiagramItem()
             {
                 Header = new Block("P6"),
+                Height = 300,
+                Width = 150,
             };
             var P2 = new DiagramItem()
             {
                 Header = new Block("P2"),
+                Height = 300,
+                Width = 150,
                 Items = new List<DiagramItem>(){
                                 P5,
                                 P6
@@ -48,15 +58,21 @@ namespace WPFDiagram.CoreTests
             var P3 = new DiagramItem()
             {
                 Header = new Block("P3"),
+                Height = 300,
+                Width = 150,
             };
             var P4 = new DiagramItem()
             {
                 Header = new Block("P4"),
+                Height = 300,
+                Width = 150,
             };
 
             var P1 = new DiagramItem()
             {
                 Header = new Block("P1"),
+                Height = 300,
+                Width = 150,
                 Items = new List<DiagramItem>(){
                         P2,
                         P3,
@@ -73,8 +89,6 @@ namespace WPFDiagram.CoreTests
             {
                 DistanceHorizontal = 100,
                 DistanceVertical = 200,
-                ItemHeight = 300,
-                ItemWidth = 150,
             };
 
             var levels = maker.CalculateLevels(list);
@@ -128,31 +142,47 @@ namespace WPFDiagram.CoreTests
             {
                 new DiagramItem(){
                     Header = new Block("P1"),
+                    Height = 300,
+                    Width = 150,
                     Items = new List<DiagramItem>(){
                         new DiagramItem(){
                             Header = new Block("P2"),
+                    Height = 300,
+                    Width = 150,
                             Items = new List<DiagramItem>(){
                                 new DiagramItem(){
-                                 Header = new Block("P5")
+                                 Header = new Block("P5"),
+                    Height = 300,
+                    Width = 150,
                                 }
                             }
                         },
                         new DiagramItem(){
                             Header = new Block("P3"),
+                    Height = 300,
+                    Width = 150,
                             Items = new List<DiagramItem>(){
                                 new DiagramItem(){
-                                 Header = new Block("P6")
+                                 Header = new Block("P6"),
+                    Height = 300,
+                    Width = 150,
                                 },
                                 new DiagramItem(){
-                                 Header = new Block("P7")
+                                 Header = new Block("P7"),
+                    Height = 300,
+                    Width = 150,
                                 },
                             }
                         },
                         new DiagramItem(){
                             Header = new Block("P4"),
+                    Height = 300,
+                    Width = 150,
                             Items = new List<DiagramItem>(){
                                 new DiagramItem(){
-                                 Header = new Block("P8")
+                                 Header = new Block("P8"),
+                    Height = 300,
+                    Width = 150,
                                 }
                             }
                         },
@@ -164,8 +194,6 @@ namespace WPFDiagram.CoreTests
             {
                 DistanceHorizontal = 100,
                 DistanceVertical = 200,
-                ItemHeight = 300,
-                ItemWidth = 150,
             };
 
             var result = maker.CalculateLevels(list);
@@ -180,38 +208,54 @@ namespace WPFDiagram.CoreTests
             {
                 new DiagramItem(){
                     Header = new Block("P1"),
+                    Height = 300,
+                    Width = 150,
                     ArrowDirection = ArrowDirection.LeftAndRight,
                     Items = new List<DiagramItem>(){
                         new DiagramItem(){
                             Header = new Block("P2"),
+                    Height = 300,
+                    Width = 150,
                             ArrowDirection = ArrowDirection.LeftAndRight,
                             Items = new List<DiagramItem>(){
                                 new DiagramItem(){
                                     Header = new Block("P5"),
+                    Height = 300,
+                    Width = 150,
                                     ArrowDirection = ArrowDirection.LeftAndRight,
                                 }
                             }
                         },
                         new DiagramItem(){
                             Header = new Block("P3"),
+                    Height = 300,
+                    Width = 150,
                             ArrowDirection = ArrowDirection.LeftAndRight,
                             Items = new List<DiagramItem>(){
                                 new DiagramItem(){
                                  Header = new Block("P6"),
+                    Height = 300,
+                    Width = 150,
                                 ArrowDirection = ArrowDirection.LeftAndRight,
                                 },
                                 new DiagramItem(){
                                  Header = new Block("P7"),
+                    Height = 300,
+                    Width = 150,
                                 ArrowDirection = ArrowDirection.LeftAndRight,
                                 },
                             }
                         },
                         new DiagramItem(){
                             Header = new Block("P4"),
+                    Height = 300,
+                    Width = 150,
                             ArrowDirection = ArrowDirection.LeftAndRight,
                             Items = new List<DiagramItem>(){
                                 new DiagramItem(){
                                  Header = new Block("P8"),
+                    Height = 300,
+                    Width = 150,
                                  ArrowDirection = ArrowDirection.LeftAndRight,
                                 }
                             }
@@ -224,8 +268,6 @@ namespace WPFDiagram.CoreTests
             {
                 DistanceHorizontal = 100,
                 DistanceVertical = 200,
-                ItemHeight = 300,
-                ItemWidth = 150,
             };
 
             var result = maker.CalculateMaxLevel(list);
@@ -240,28 +282,42 @@ namespace WPFDiagram.CoreTests
             {
                 new DiagramItem(){
                     Header = new Block("P1"),
+                    Height = 300,
+                    Width = 150,
                     Items = new List<DiagramItem>(){
                         new DiagramItem(){
                             Header = new Block("P2"),
+                    Height = 300,
+                    Width = 150,
                             Items = new List<DiagramItem>(){
                                 new DiagramItem(){
-                                 Header = new Block("P5")
+                                 Header = new Block("P5"),
+                    Height = 300,
+                    Width = 150,
                                 }
                             }
                         },
                         new DiagramItem(){
                             Header = new Block("P3"),
+                    Height = 300,
+                    Width = 150,
                             Items = new List<DiagramItem>(){
                                 new DiagramItem(){
-                                 Header = new Block("P6")
+                                 Header = new Block("P6"),
+                    Height = 300,
+                    Width = 150,
                                 },
                                 new DiagramItem(){
-                                 Header = new Block("P7")
+                                 Header = new Block("P7"),
+                    Height = 300,
+                    Width = 150,
                                 },
                             }
                         },
                         new DiagramItem(){
                             Header = new Block("P4"),
+                    Height = 300,
+                    Width = 150,
                         },
                     }
                 },
@@ -271,8 +327,6 @@ namespace WPFDiagram.CoreTests
             {
                 DistanceHorizontal = 100,
                 DistanceVertical = 200,
-                ItemHeight = 300,
-                ItemWidth = 150,
             };
 
             var result = maker.CalculateLevels(list);

@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 using WPFDiagram.Core.Model;
 
 namespace WPFDiagram
@@ -58,7 +59,9 @@ namespace WPFDiagram
                 Header = new Block("P8"),
                 Items = new List<DiagramItem>() {
                     P9
-                }
+                },
+                ArrowLeftInformation = new ArrowBlock() { TextAboveLine = "02-22", TextBeneathLine = "2020" },
+                ArrowRightInformation = new ArrowBlock() { TextAboveLine = "02-22" },
             };
             var P5 = new DiagramItem()
             {
@@ -74,6 +77,9 @@ namespace WPFDiagram
             {
                 ArrowDirection = ArrowDirection.LeftAndRight,
                 Header = new Block("P6"),
+                Height = 175,
+                BackgroundColor = BrushCreator.Convert("#62d31b"),
+                BackgroundSelectionColor = BrushCreator.Convert("#51ad17"),
             };
             var P2 = new DiagramItem()
             {

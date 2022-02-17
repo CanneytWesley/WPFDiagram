@@ -38,33 +38,6 @@ namespace WPFDiagram
             DependencyProperty.Register("DiagramItems", typeof(ObservableCollection<DiagramItem>), typeof(UCDiagram), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.None, OnItemChange));
 
 
-
-        public double ItemWidth
-        {
-            get { return (double)GetValue(ItemWidthProperty); }
-            set { SetValue(ItemWidthProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for ItemWidth.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty ItemWidthProperty =
-            DependencyProperty.Register("ItemWidth", typeof(double), typeof(UCDiagram), new PropertyMetadata(150d));
-
-
-
-
-        public double ItemHeight
-        {
-            get { return (double)GetValue(ItemHeightProperty); }
-            set { SetValue(ItemHeightProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for ItemHeight.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty ItemHeightProperty =
-            DependencyProperty.Register("ItemHeight", typeof(double), typeof(UCDiagram), new PropertyMetadata(100d));
-
-
-
-
         public double DistanceHorizontal
         {
             get { return (double)GetValue(DistanceHorizontalProperty); }
@@ -138,8 +111,6 @@ namespace WPFDiagram
         {
             DiagramMaker maker = new DiagramMaker()
             {
-                ItemWidth = ItemWidth,
-                ItemHeight = ItemHeight,
                 DistanceHorizontal = DistanceHorizontal,
                 DistanceVertical = DistanceVertical,
                 ArrowWidth = ArrowWidth,

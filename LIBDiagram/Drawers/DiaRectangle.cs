@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Collections.Generic;
 using WPFDiagram.Core.Model;
+using BrushConverter = System.Windows.Media.BrushConverter;
 
 namespace WPFDiagram.Core.Drawers
 {
@@ -23,6 +24,7 @@ namespace WPFDiagram.Core.Drawers
 
         private UIElement GetBody(DiagramItem item)
         {
+            
             Grid grid = new Grid();
             grid.Width = item.Width;
             grid.Height = item.Height;
@@ -49,8 +51,8 @@ namespace WPFDiagram.Core.Drawers
             l.X1 = 10;
             l.Y1 = 0;
             l.X2 = item.Width-10;
-            l.Y2 = 0; 
-            l.Stroke = CreateBrush("#1a68a1");
+            l.Y2 = 0;
+            l.Stroke = BrushCreator.ChangeColorBrightness(item.BackgroundColor, -0.3f); //BrushCreator.Convert("#1a68a1");
             l.StrokeThickness = 1;
             Grid.SetRow(l, 1);
             grid.Children.Add(l);
@@ -108,12 +110,12 @@ namespace WPFDiagram.Core.Drawers
                 Property = Rectangle.IsMouseOverProperty,
                 Value = true
             };
-            triggerIsMouseOver.Setters.Add(new Setter() { Property = Rectangle.FillProperty, Value = CreateBrush("#1374ba") });
+            triggerIsMouseOver.Setters.Add(new Setter() { Property = Rectangle.FillProperty, Value = item.BackgroundSelectionColor });
             if (item.ClickAction != null)
                 triggerIsMouseOver.Setters.Add(new Setter() { Property = Rectangle.CursorProperty, Value = Cursors.Hand });
 
             style.Triggers.Add(triggerIsMouseOver);
-            style.Setters.Add(new Setter() { Property = Rectangle.FillProperty, Value = CreateBackgroundBrush() });
+            style.Setters.Add(new Setter() { Property = Rectangle.FillProperty, Value = item.BackgroundColor });
 
             if (item.ClickAction != null)
                 rec.MouseLeftButtonUp += (s, e) => { item.ClickAction?.Invoke(); };
@@ -130,32 +132,5 @@ namespace WPFDiagram.Core.Drawers
             return rec;
         }
 
-        private Brush CreateBackgroundBrush()
-        {
-            var newbrush = new RadialGradientBrush()
-            {
-                Center = new Point(0.5, 0.5),
-                GradientOrigin = new Point(0.5, 0.5),
-                GradientStops = new GradientStopCollection() {
-                        new GradientStop(){
-                            Color = (Color)ColorConverter.ConvertFromString("#1483d2"),
-                            Offset = 0,
-                        },
-                        new GradientStop(){
-                            Color = (Color)ColorConverter.ConvertFromString("#258ad4"),
-                            Offset = 1,
-                        },
-                    }
-            };
-
-            return newbrush;
-        }
-
-        private Brush CreateBrush(string hex)
-        {
-            if (string.IsNullOrWhiteSpace(hex)) return Brushes.Transparent;
-
-            return (SolidColorBrush)new BrushConverter().ConvertFrom(hex);
-        }
     }
 }

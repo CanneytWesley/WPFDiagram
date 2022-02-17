@@ -3,11 +3,72 @@ using System.Windows.Media;
 using System.Windows;
 using System.Windows.Shapes;
 using WPFDiagram.Core.Model;
+using System.Windows.Controls;
 
 namespace WPFDiagram.Core.Drawers
 {
     internal class DiaConnectionLine
     {
+        internal List<UIElement> CreateArrowInformation(DiagramItem item, double DistanceHorizontal)
+        {
+            var lijst = new List<UIElement>();
+
+            if (item.ArrowLeftInformation.IsAboveValid())
+            {
+                Label l = new Label();
+                l.Padding = new Thickness(0);
+                l.Content = item.ArrowLeftInformation.TextAboveLine;
+                l.Width = DistanceHorizontal / 2;
+                l.HorizontalContentAlignment = HorizontalAlignment.Center;
+
+                Canvas.SetLeft(l, item.X - l.Width);
+                Canvas.SetTop(l, item.Y - 18);
+
+                lijst.Add(l);
+            }
+            if (item.ArrowLeftInformation.IsBeneathValid())
+            {
+                Label l = new Label();
+                l.Padding = new Thickness(0);
+                l.Content = item.ArrowLeftInformation.TextBeneathLine;
+                l.Width = DistanceHorizontal / 2;
+                l.HorizontalContentAlignment = HorizontalAlignment.Center;
+
+                Canvas.SetLeft(l, item.X - l.Width);
+                Canvas.SetTop(l, item.Y +2);
+
+                lijst.Add(l);
+            }
+            if (item.ArrowRightInformation.IsAboveValid())
+            {
+                Label l = new Label();
+                l.Padding = new Thickness(0);
+                l.Content = item.ArrowRightInformation.TextAboveLine;
+                l.Width = DistanceHorizontal / 2;
+                l.HorizontalContentAlignment = HorizontalAlignment.Center;
+
+                Canvas.SetLeft(l, item.X +item.Width);
+                Canvas.SetTop(l, item.Y - 18);
+
+                lijst.Add(l);
+            }
+            if (item.ArrowRightInformation.IsBeneathValid())
+            {
+                Label l = new Label();
+                l.Padding = new Thickness(0);
+                l.Content = item.ArrowRightInformation.TextBeneathLine;
+                l.Width = DistanceHorizontal / 2;
+                l.HorizontalContentAlignment = HorizontalAlignment.Center;
+
+                Canvas.SetLeft(l, item.X + item.Width);
+                Canvas.SetTop(l, item.Y +2);
+
+                lijst.Add(l);
+            }
+
+            return lijst;
+        }
+
         internal Polyline CreateLine(DiagramItem diagram, DiagramItem child, double DistanceHorizontal)
         {
             Polyline l = new Polyline();

@@ -22,10 +22,6 @@ namespace WPFDiagram.Core
 
         public double DistanceVertical { get; init; }
 
-        public double ItemWidth { get; init; }
-
-        public double ItemHeight { get; init; }
-
         public double ArrowWidth { get; init; }
         public double ArrowHeight { get; init; }
 
@@ -82,7 +78,13 @@ namespace WPFDiagram.Core
 
 
                     Canvas.Children.Add(DiaConnectionLine.CreateLine(diagram, child, DistanceHorizontal));
+                
+                
                 }
+
+                var labels = DiaConnectionLine.CreateArrowInformation(diagram, DistanceHorizontal);
+                labels.ForEach(p => Canvas.Children.Add(p));
+
 
                 DrawLines(diagram.Items);
             }
@@ -114,14 +116,18 @@ namespace WPFDiagram.Core
 
         internal List<DiagramItem> CalculateMeasures(List<DiagramItem> items, List<LevelCount> levels)
         {
-            double y = ItemHeight/2;
+            var allItems = levels.SelectMany(p => p.Items).ToList();
+            var maxHeight = allItems.Max(p => p.Height);
+            var maxWidth = allItems.Max(p => p.Width);
+
+            double y = 0;
             foreach (var part in levels.First().Items)
             {
+                if (y == 0) y += maxHeight / 2;
+
                 part.Y = y;
-                part.Height = ItemHeight;
-                part.Width = ItemWidth;
-                part.X = levels.First().Level * ItemWidth + levels.First().Level * DistanceHorizontal;
-                y += ItemHeight + DistanceVertical;
+                part.X = levels.First().Level * maxWidth + levels.First().Level * DistanceHorizontal;
+                y += maxHeight + DistanceVertical;
             }
 
             for (int i = 1; i < levels.Count;i++)
@@ -129,9 +135,7 @@ namespace WPFDiagram.Core
                 foreach (var part in levels[i].Items)
                 {
                     var partY = part.Items.Min(p => p.Y) +( part.Items.Max(p => p.Y) - part.Items.Min(p => p.Y))/2;
-                    part.Height = ItemHeight;
-                    part.Width = ItemWidth;
-                    part.X = levels[i].Level * ItemWidth + levels[i].Level * DistanceHorizontal;
+                    part.X = levels[i].Level * maxWidth + levels[i].Level * DistanceHorizontal;
 
                     part.Y = partY;
                 }
