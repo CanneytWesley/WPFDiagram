@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFDiagram", "WPFDiagram\WP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFDiagram.CoreTests", "LIBDiagramTests\WPFDiagram.CoreTests.csproj", "{8AA525B8-7CE1-4853-A3D0-5D6F42180D73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFDiagram.GuiTests", "WPFDiagram.GuiTests\WPFDiagram.GuiTests.csproj", "{483B0267-A41C-4E77-82F3-517149159D2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{8AA525B8-7CE1-4853-A3D0-5D6F42180D73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AA525B8-7CE1-4853-A3D0-5D6F42180D73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AA525B8-7CE1-4853-A3D0-5D6F42180D73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{483B0267-A41C-4E77-82F3-517149159D2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{483B0267-A41C-4E77-82F3-517149159D2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{483B0267-A41C-4E77-82F3-517149159D2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{483B0267-A41C-4E77-82F3-517149159D2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

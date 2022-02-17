@@ -10,12 +10,9 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WPFDiagram.Core.Model;
-using WPFDiagram.Core;
 
-namespace WPFDiagram
+namespace WPFDiagram.GuiTests
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,9 +22,7 @@ namespace WPFDiagram
         public MainWindow()
         {
             InitializeComponent();
-
             DataContext = new MainWindowViewModel();
-
         }
     }
 }

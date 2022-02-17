@@ -10,7 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using WPFDiagram.Core.Model;
 
-namespace WPFDiagram
+namespace WPFDiagram.GuiTests
 {
     public class MainWindowViewModel
     {
@@ -37,7 +37,7 @@ namespace WPFDiagram
             {
                 ArrowDirection = ArrowDirection.LeftAndRight,
                 Header = new Block("Added")
-            }) ;
+            });
         }
 
         private void InitialiseList()
