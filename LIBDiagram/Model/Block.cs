@@ -11,10 +11,11 @@ namespace WPFDiagram.Core.Model
 
         public Block()
         {
-
+            Background = Brushes.Transparent;
+            Foreground = Brushes.White;
         }
 
-        public Block(string text)
+        public Block(string text) : this()
         {
             Text = text;
         }

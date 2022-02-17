@@ -34,11 +34,11 @@ namespace WPFDiagram.Core.Drawers
 
             TextBlock header = new TextBlock();
             header.IsHitTestVisible = false;
-            header.Background = null;
+            header.Background = item.Header.Background;
             header.Text = item.Header.Text;
             header.FontWeight = FontWeights.Bold;
             header.Margin = new Thickness(5);
-            header.Foreground = Brushes.White;
+            header.Foreground = item.Header.Foreground;
             header.Width = item.Width;
             header.TextAlignment = TextAlignment.Center;
             header.TextTrimming = TextTrimming.CharacterEllipsis;
@@ -67,7 +67,7 @@ namespace WPFDiagram.Core.Drawers
                 middle.Width = item.Width;
                 middle.TextAlignment = TextAlignment.Center;
                 middle.Padding = new Thickness(5);
-                middle.Foreground = Brushes.White;
+                middle.Foreground = item.Middle.Foreground;
                 Grid.SetRow(middle, 2);
                 grid.Children.Add(middle);
             }
@@ -83,7 +83,7 @@ namespace WPFDiagram.Core.Drawers
                 footer.Width = item.Width;
                 footer.TextAlignment = TextAlignment.Center;
                 footer.Padding = new Thickness(5);
-                footer.Foreground = Brushes.White;
+                footer.Foreground = item.Footer.Foreground;
                 Grid.SetRow(footer, 3);
                 grid.Children.Add(footer);
             }
