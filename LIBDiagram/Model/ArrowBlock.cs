@@ -1,9 +1,13 @@
-﻿namespace WPFDiagram.Core.Model
+﻿using System.Windows.Media;
+
+namespace WPFDiagram.Core.Model
 {
     public class ArrowBlock
     {
         public string TextAboveLine { get; set; }
         public string TextBeneathLine { get; set; }
+
+        public Brush TextColor { get; set; } = Brushes.Black;
 
         public bool IsValid()
         {

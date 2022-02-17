@@ -16,6 +16,7 @@ namespace WPFDiagram.Core.Drawers
             if (item.ArrowLeftInformation.IsAboveValid())
             {
                 Label l = new Label();
+                l.Foreground = item.ArrowLeftInformation.TextColor;
                 l.Padding = new Thickness(0);
                 l.Content = item.ArrowLeftInformation.TextAboveLine;
                 l.Width = DistanceHorizontal / 2;
@@ -29,6 +30,7 @@ namespace WPFDiagram.Core.Drawers
             if (item.ArrowLeftInformation.IsBeneathValid())
             {
                 Label l = new Label();
+                l.Foreground = item.ArrowLeftInformation.TextColor;
                 l.Padding = new Thickness(0);
                 l.Content = item.ArrowLeftInformation.TextBeneathLine;
                 l.Width = DistanceHorizontal / 2;
@@ -42,6 +44,7 @@ namespace WPFDiagram.Core.Drawers
             if (item.ArrowRightInformation.IsAboveValid())
             {
                 Label l = new Label();
+                l.Foreground = item.ArrowRightInformation.TextColor;
                 l.Padding = new Thickness(0);
                 l.Content = item.ArrowRightInformation.TextAboveLine;
                 l.Width = DistanceHorizontal / 2;
@@ -55,6 +58,7 @@ namespace WPFDiagram.Core.Drawers
             if (item.ArrowRightInformation.IsBeneathValid())
             {
                 Label l = new Label();
+                l.Foreground = item.ArrowRightInformation.TextColor;
                 l.Padding = new Thickness(0);
                 l.Content = item.ArrowRightInformation.TextBeneathLine;
                 l.Width = DistanceHorizontal / 2;

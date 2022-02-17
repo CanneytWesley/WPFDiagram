@@ -61,7 +61,7 @@ namespace WPFDiagram
                     P9
                 },
                 ArrowLeftInformation = new ArrowBlock() { TextAboveLine = "02-22", TextBeneathLine = "2020" },
-                ArrowRightInformation = new ArrowBlock() { TextAboveLine = "02-22" },
+                ArrowRightInformation = new ArrowBlock() { TextAboveLine = "02-22", TextColor = Brushes.Peru },
             };
             var P5 = new DiagramItem()
             {
